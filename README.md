@@ -20,6 +20,7 @@
       color: black;
       padding: 25px;
       border-radius: 15px;
+      animation: fadeIn 0.8s ease-in-out;
       width: 320px;
       margin: auto;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -35,6 +36,18 @@
       border-radius: 8px;
       width: 100%;
     }
+
+    
+    @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
     select, input {
       padding: 10px;
