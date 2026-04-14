@@ -103,15 +103,22 @@
 
     <input type="file"><br>
 
-    <!-- Image preview -->
-    <img id="preview" width="200" style="margin-top:10px; border-radius:10px;">
+<img id="preview" width="200" style="margin-top:10px; border-radius:10px;">
 
-    <select id="occasion">
-    <select id="style">
+<!-- Occasion -->
+<select id="occasion">
+  <option>College</option>
+  <option>Date</option>
+  <option>Party</option>
+</select>
+
+<!-- Style -->
+<select id="style">
   <option>Casual 😎</option>
   <option>Attractive 🔥</option>
   <option>Smart 🧠</option>
   <option>Minimal 🖤</option>
+</select>
 </select>
       <option>College</option>
       <option>Date</option>
