@@ -106,12 +106,11 @@
 <img id="preview" width="200" style="margin-top:10px; border-radius:10px;">
 
 <!-- Occasion -->
-<select id="occasion">
-  <option>College</option>
-  <option>Date</option>
-  <option>Party</option>
+<select id="occasion-select">
+  <option value="college">College</option>
+  <option value="date">Date</option>
+  <option value="party">Party</option>
 </select>
-
 <!-- Style -->
 <select id="style">
   <option>Casual</option>
@@ -133,16 +132,17 @@
   <small>FitMirror © 2026</small>
 </footer>
 <script>
-function suggestOutfit() {
+  function suggestOutfit() {
   let btn = document.getElementById("btn");
   let result = document.getElementById("result");
 
   let occasion = document.getElementById("occasion").value;
   let style = document.getElementById("style").value;
 
+  // 👉 show thinking
   btn.innerText = "Thinking... 🤔";
 
-  setTimeout(() => {
+  setTimeout(function () {
 
     let outfits = {
       College: {
@@ -176,6 +176,8 @@ function suggestOutfit() {
     let random = Math.floor(Math.random() * options.length);
 
     result.innerText = options[random];
+
+    // 👉 reset button
     btn.innerText = "Suggest Outfit";
 
   }, 1000);
