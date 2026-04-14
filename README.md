@@ -107,6 +107,12 @@
     <img id="preview" width="200" style="margin-top:10px; border-radius:10px;">
 
     <select id="occasion">
+    <select id="style">
+  <option>Casual 😎</option>
+  <option>Attractive 🔥</option>
+  <option>Smart 🧠</option>
+  <option>Minimal 🖤</option>
+</select>
       <option>College</option>
       <option>Date</option>
       <option>Party</option>
@@ -121,11 +127,48 @@
   <small>FitMirror © 2026</small>
 </footer>
 <script>
-
 function suggestOutfit() {
   let btn = document.getElementById("btn");
   let result = document.getElementById("result");
   let occasion = document.getElementById("occasion").value;
+  let style = document.getElementById("style").value;
+
+  btn.innerText = "Thinking... 🤔";
+
+  setTimeout(() => {
+
+    // 👇 STEP 4 CODE GOES HERE
+    let outfits = {
+      College: {
+        "Casual 😎": ["👕 Oversized tee + Jeans + Sneakers"],
+        "Attractive 🔥": ["🔥 Fitted shirt + Dark jeans"],
+        "Smart 🧠": ["👔 Shirt + Formal pants"],
+        "Minimal 🖤": ["🖤 Plain tee + Black jeans"]
+      },
+      Date: {
+        "Casual 😎": ["👕 Tee + Jeans"],
+        "Attractive 🔥": ["🔥 White shirt + Black jeans"],
+        "Smart 🧠": ["👔 Shirt + Blazer"],
+        "Minimal 🖤": ["🖤 All black outfit"]
+      },
+      Party: {
+        "Casual 😎": ["👕 Printed tee"],
+        "Attractive 🔥": ["🔥 Shirt + Chain"],
+        "Smart 🧠": ["👔 Blazer + Watch"],
+        "Minimal 🖤": ["🖤 Black outfit"]
+      }
+    };
+
+    // 👇 THIS LINE USES IT
+    let options = outfits[occasion][style];
+    let random = Math.floor(Math.random() * options.length);
+
+    result.innerText = options[random];
+    btn.innerText = "Suggest Outfit";
+
+  }, 1000);
+}
+  let style = document.getElementById("style").value;
 
   btn.innerText = "Thinking... 🤔";
 
