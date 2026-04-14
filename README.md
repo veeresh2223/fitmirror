@@ -114,10 +114,10 @@
 
 <!-- Style -->
 <select id="style">
-  <option>Casual 😎</option>
-  <option>Attractive 🔥</option>
-  <option>Smart 🧠</option>
-  <option>Minimal 🖤</option>
+  <option>Casual</option>
+  <option>Attractive</option>
+  <option>Smart</option>
+  <option>Minimal</option>
 </select>
       <option>College</option>
       <option>Date</option>
@@ -136,6 +136,7 @@
 function suggestOutfit() {
   let btn = document.getElementById("btn");
   let result = document.getElementById("result");
+
   let occasion = document.getElementById("occasion").value;
   let style = document.getElementById("style").value;
 
@@ -143,30 +144,35 @@ function suggestOutfit() {
 
   setTimeout(() => {
 
-    // 👇 STEP 4 CODE GOES HERE
     let outfits = {
       College: {
-        "Casual 😎": ["👕 Oversized tee + Jeans + Sneakers"],
-        "Attractive 🔥": ["🔥 Fitted shirt + Dark jeans"],
-        "Smart 🧠": ["👔 Shirt + Formal pants"],
-        "Minimal 🖤": ["🖤 Plain tee + Black jeans"]
+        Casual: ["👕 T-shirt + Jeans", "🧢 Hoodie + Joggers"],
+        Attractive: ["🔥 Fitted shirt + Dark jeans"],
+        Smart: ["👔 Shirt + Formal pants"],
+        Minimal: ["🖤 Plain tee + Black jeans"]
       },
       Date: {
-        "Casual 😎": ["👕 Tee + Jeans"],
-        "Attractive 🔥": ["🔥 White shirt + Black jeans"],
-        "Smart 🧠": ["👔 Shirt + Blazer"],
-        "Minimal 🖤": ["🖤 All black outfit"]
+        Casual: ["👕 Tee + Jeans"],
+        Attractive: ["🔥 White shirt + Black jeans"],
+        Smart: ["👔 Shirt + Blazer"],
+        Minimal: ["🖤 All black outfit"]
       },
       Party: {
-        "Casual 😎": ["👕 Printed tee"],
-        "Attractive 🔥": ["🔥 Shirt + Chain"],
-        "Smart 🧠": ["👔 Blazer + Watch"],
-        "Minimal 🖤": ["🖤 Black outfit"]
+        Casual: ["👕 Printed tee"],
+        Attractive: ["🔥 Shirt + Chain"],
+        Smart: ["👔 Blazer + Watch"],
+        Minimal: ["🖤 Black outfit"]
       }
     };
 
-    // 👇 THIS LINE USES IT
-    let style = document.getElementById("style").value;trim();
+    let options = outfits[occasion][style];
+
+    if (!options) {
+      result.innerText = "⚠️ Select properly";
+      btn.innerText = "Suggest Outfit";
+      return;
+    }
+
     let random = Math.floor(Math.random() * options.length);
 
     result.innerText = options[random];
