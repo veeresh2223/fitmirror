@@ -1,79 +1,58 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>FitMirror</title>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #f5f5f5;
-      padding: 40px;
-    }
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 40px;
+    color: white;
+  }
 
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      width: 300px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+  .box {
+    background: white;
+    color: black;
+    padding: 25px;
+    border-radius: 15px;
+    width: 320px;
+    margin: auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
 
-    button {
-      background: black;
-      color: white;
-      padding: 10px;
-      border: none;
-      margin-top: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
+  h2 {
+    margin-bottom: 15px;
+  }
 
-    select, input {
-      padding: 8px;
-      margin-top: 10px;
-      width: 100%;
-    }
+  button {
+    background: #667eea;
+    color: white;
+    padding: 12px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 15px;
+  }
 
-    #result {
-      margin-top: 20px;
-      font-weight: bold;
-    }
-  </style>
-</head>
+  button:hover {
+    background: #5a67d8;
+  }
 
-<body>
+  select, input {
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
 
-  <div class="box">
-    <h2>👕 FitMirror</h2>
+  #result {
+    margin-top: 20px;
+    font-weight: bold;
+  }
 
-    <input type="file"><br>
-
-    <select id="occasion">
-      <option>College</option>
-      <option>Date</option>
-      <option>Party</option>
-    </select>
-
-    <button onclick="suggestOutfit()">Suggest Outfit</button>
-
-    <p id="result"></p>
-  </div>
-
-  <script>
-    function suggestOutfit() {
-      let occasion = document.getElementById("occasion").value;
-      let result = document.getElementById("result");
-
-      if (occasion === "College") {
-        result.innerText = "👕 Jeans + T-shirt + Sneakers 😎";
-      } else if (occasion === "Date") {
-        result.innerText = "🔥 White shirt + Black jeans + Watch";
-      } else {
-        result.innerText = "🖤 All black outfit + Stylish shoes";
-      }
-    }
-  </script>
-
-</body>
-</html>
+  footer {
+    margin-top: 20px;
+    font-size: 12px;
+    opacity: 0.8;
+  }
+</style>
