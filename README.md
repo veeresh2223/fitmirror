@@ -27,6 +27,7 @@
     }
 
     button {
+      transform :scale(0.95);
       background: #667eea;
       color: white;
       padding: 12px;
@@ -57,9 +58,12 @@
     }
 
     #result {
-      margin-top: 20px;
-      font-weight: bold;
-    }
+  margin-top: 20px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+}
 
     footer {
       margin-top: 20px;
@@ -118,7 +122,14 @@ function suggestOutfit() {
     let options = outfits[occasion];
     let random = Math.floor(Math.random() * options.length);
 
-    result.innerText = options[random];
+    result.style.opacity = 0;
+result.style.transform = "translateY(10px)";
+
+setTimeout(() => {
+  result.innerText = options[random];
+  result.style.opacity = 1;
+  result.style.transform = "translateY(0)";
+}, 200);
     btn.innerText = "Suggest Outfit";
   }, 1000);
 }
