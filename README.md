@@ -119,7 +119,6 @@
   <option>Smart 🧠</option>
   <option>Minimal 🖤</option>
 </select>
-</select>
       <option>College</option>
       <option>Date</option>
       <option>Party</option>
