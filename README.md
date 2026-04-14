@@ -106,17 +106,17 @@
 <img id="preview" width="200" style="margin-top:10px; border-radius:10px;">
 
 <!-- Occasion -->
-<select id="occasion-select">
-  <option value="college">College</option>
-  <option value="date">Date</option>
-  <option value="party">Party</option>
+<select id="occasion">
+  <option value="College">College 🎓</option>
+  <option value="Date">Date ❤️</option>
+  <option value="Party">Party 🎉</option>
 </select>
-<!-- Style -->
+
 <select id="style">
-  <option>Casual</option>
-  <option>Attractive</option>
-  <option>Smart</option>
-  <option>Minimal</option>
+  <option value="Casual">Casual 😎</option>
+  <option value="Attractive">Attractive 🔥</option>
+  <option value="Smart">Smart 🧠</option>
+  <option value="Minimal">Minimal 🖤</option>
 </select>
       <option>College</option>
       <option>Date</option>
@@ -141,11 +141,11 @@ function suggestOutfit() {
 
   btn.innerText = "Thinking... 🤔";
 
-  setTimeout(() => {
+  setTimeout(function () {
 
     let outfits = {
       College: {
-        Casual: ["👕 T-shirt + Jeans", "🧢 Hoodie + Joggers"],
+        Casual: ["👕 Oversized tee + Jeans", "🧢 Hoodie + Joggers"],
         Attractive: ["🔥 Fitted shirt + Dark jeans"],
         Smart: ["👔 Shirt + Formal pants"],
         Minimal: ["🖤 Plain tee + Black jeans"]
@@ -175,6 +175,7 @@ function suggestOutfit() {
     let random = Math.floor(Math.random() * options.length);
 
     result.innerText = options[random];
+
     btn.innerText = "Suggest Outfit";
 
   }, 1000);
