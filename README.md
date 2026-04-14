@@ -71,14 +71,22 @@
       <option>Party</option>
     </select>
 
-    <button onclick="suggestOutfit()">Suggest Outfit</button>
-
+<button onclick="suggestOutfit()" id="btn">Suggest Outfit</button>
     <p id="result"></p>
   </div>
 
   <footer>Made by Veeresh 🚀</footer>
 
-  <script>
+<script>
+
+function suggestOutfit() {
+  let btn = document.getElementById("btn");
+  let result = document.getElementById("result");
+  let occasion = document.getElementById("occasion").value;
+
+  btn.innerText = "Thinking... 🤔";
+
+  setTimeout(() => {
     let outfits = {
       College: [
         "😎 Oversized tee + Cargo pants + Sneakers",
@@ -94,28 +102,15 @@
       ]
     };
 
-    function suggestOutfit() {
-      let occasion = document.getElementById("occasion").value;
-      let result = document.getElementById("result");
+    let options = outfits[occasion];
+    let random = Math.floor(Math.random() * options.length);
 
-      let options = outfits[occasion];
-      let random = Math.floor(Math.random() * options.length);
+    result.innerText = options[random];
+    btn.innerText = "Suggest Outfit";
+  }, 1000);
+}
 
-      result.innerText = options[random];
-    }
-
-    // Image preview
-    document.querySelector("input").addEventListener("change", function(event) {
-      let file = event.target.files[0];
-      let reader = new FileReader();
-
-      reader.onload = function() {
-        document.getElementById("preview").src = reader.result;
-      };
-
-      reader.readAsDataURL(file);
-    });
-  </script>
+</script>
 
 </body>
 </html>
