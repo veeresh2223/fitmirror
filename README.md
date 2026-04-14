@@ -1,6 +1,5 @@
-<html>
-  
 <!DOCTYPE html>
+<html>
 <head>
   <title>FitMirror</title>
 
