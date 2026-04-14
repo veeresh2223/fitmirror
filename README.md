@@ -166,7 +166,7 @@ function suggestOutfit() {
     };
 
     // 👇 THIS LINE USES IT
-    let options = outfits[occasion][style];
+    let style = document.getElementById("style").value;trim();
     let random = Math.floor(Math.random() * options.length);
 
     result.innerText = options[random];
@@ -194,7 +194,13 @@ function suggestOutfit() {
       ]
     };
 
-    let options = outfits[occasion];
+   let options = outfits[occasion][style];
+
+if (!options) {
+  result.innerText = "⚠️ Try selecting options again";
+  btn.innerText = "Suggest Outfit";
+  return;
+}
     let random = Math.floor(Math.random() * options.length);
 
     result.style.opacity = 0;
