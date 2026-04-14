@@ -16,6 +16,12 @@
     }
 
     .box {
+      margin-top: 20px;
+      transition: 0.3s;
+      .box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
       background: white;
       color: black;
       padding: 25px;
@@ -24,6 +30,20 @@
       width: 320px;
       margin: auto;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+      .hero {
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.hero p {
+  font-size: 14px;
+  opacity: 0.9;
+}
     }
 
     button {
@@ -73,6 +93,10 @@
 </head>
 
 <body>
+<div class="hero">
+  <h1>Style Yourself Smarter 👕</h1>
+  <p>Your personal outfit assistant powered by smart suggestions</p>
+</div>
 
   <div class="box">
     <h2>👕 FitMirror</h2>
@@ -92,8 +116,10 @@
     <p id="result"></p>
   </div>
 
-  <footer>Made by Veeresh 🚀</footer>
-
+<footer>
+  Made by Veeresh 🚀 <br>
+  <small>FitMirror © 2026</small>
+</footer>
 <script>
 
 function suggestOutfit() {
